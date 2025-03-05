@@ -1,7 +1,8 @@
-import { BaseScreen } from '@/core/component/base-screen.component.js'
+import { BaseScreen } from '@/core/component/base-screen.component'
 import renderService from '@/core/services/render.service'
+
+import styles from './home.module.scss'
 import template from './home.template.html'
-import * as styles from './home.module.scss'
 
 export class Home extends BaseScreen {
 	constructor() {
@@ -10,7 +11,6 @@ export class Home extends BaseScreen {
 
 	render() {
 		const element = renderService.htmlToElement(template, [], styles)
-
 		return element.outerHTML
 	}
 }

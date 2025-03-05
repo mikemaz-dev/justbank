@@ -1,0 +1,39 @@
+@import './variables';
+@import './reset';
+
+input,
+button,
+body {
+	font-family: $font;
+}
+
+body {
+	background-color: #1b1d1f;
+	color: $white;
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+input {
+	font-size: 16px;
+	background-color: transparent;
+	color: $white;
+
+	&::placeholder {
+		color: $text-gray;
+	}
+}
+
+a {
+	color: $white;
+	text-decoration: none;
+	transition: border-color 0.3s ease-in-out;
+	border-bottom: 1px solid transparent;
+	animation: drawing 0.4s;
+
+	&:hover {
+		border-color: $primary;
+	}
+}
+
+@import './keyframes';

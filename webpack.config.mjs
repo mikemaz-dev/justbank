@@ -102,8 +102,7 @@ export default {
 						loader: 'css-loader',
 						options: {
 							modules: {
-								localIdentName: '[local]_[hash:base64:7]',
-								exportLocalsConvention: 'camelCaseOnly' // Теперь стили доступны как JS-объект
+								localIdentName: '[local]_[hash:base64:7]'
 							}
 						}
 					},
