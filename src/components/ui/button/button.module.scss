@@ -1,0 +1,37 @@
+@use 'sass:color';
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.button {
+	@include transition(background-color);
+	background-color: $gray;
+	color: $white;
+	border-radius: $radius;
+	padding: 12px 30px;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: capitalize;
+
+	&:disabled {
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	&:hover {
+		background-color: color.adjust($gray, $lightness: 3%);
+	}
+
+	&.green {
+		background-color: rgba($secondary, 50%);
+		&:hover {
+			background-color: rgba($secondary, 80%);
+		}
+	}
+
+	&.purple {
+		background-color: rgba($primary, 40%);
+		&:hover {
+			background-color: rgba($primary, 70%);
+		}
+	}
+}

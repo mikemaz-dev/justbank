@@ -1,0 +1,6 @@
+@use '@/styles/mixins' as *;
+
+.user-item {
+	@include flex-horizontal-center;
+	gap: 10px;
+}

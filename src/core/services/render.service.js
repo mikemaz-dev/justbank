@@ -27,7 +27,7 @@ class RenderService {
 	 * @param {Array} components
 	 */
 	#replaceComponentTags(parentElement, components) {
-		const componentTagPattern = /^components-/
+		const componentTagPattern = /^component-/
 		const allElements = parentElement.getElementsByTagName('*')
 
 		for (const element of allElements) {

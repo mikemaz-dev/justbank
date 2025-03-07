@@ -1,4 +1,6 @@
 @use '@/styles/mixins' as *;
 @use '@/styles/variables' as *;
 
-.{{name}} { }
+.heading {
+	color: $white;
+}

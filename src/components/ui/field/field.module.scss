@@ -1,0 +1,17 @@
+@use 'sass:color';
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.field {
+	@include transition(border-color);
+	background-color: $gray;
+	border-radius: $radius;
+	border: 1px solid transparent;
+	padding: 12px 20px;
+	margin-bottom: 1.3rem;
+	display: block;
+
+	&:focus-within {
+		border-color: rgba($primary, 0.5);
+	}
+}
