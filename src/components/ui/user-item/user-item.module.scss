@@ -1,6 +1,39 @@
+@use 'sass:color';
+@use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
 .user-item {
+	padding: 7px 15px;
+	background-color: $bg-block;
+	border-radius: 13px;
 	@include flex-horizontal-center;
-	gap: 10px;
+	color: $white;
+	font-size: 17px;
+
+	&:disabled {
+		cursor: default;
+	}
+
+	&:not(:disabled) {
+		@include transition(background-color);
+
+		&:hover {
+			background-color: color.adjust($gray, $lightness: 4.5%);
+		}
+	}
+
+	&.gray {
+		background-color: $gray;
+	}
+
+	> img {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		margin-right: 5px;
+	}
+
+	> span {
+		margin-left: 5px;
+	}
 }

@@ -5,46 +5,43 @@
 input,
 button,
 body {
-  font-family: $font;
+	font-family: $font;
 }
 
 body {
-  background-color: #1b1d1f;
-  color: $white;
-  font-size: 17px;
-  line-height: 1.6;
+	background-color: #212527;
+	color: $white;
+	font-size: 17px;
+	line-height: 1.6;
 }
 
 input {
-  font-size: 16px;
-  background-color: transparent;
-  color: $white;
-
-  &::placeholder {
-    color: $text-gray;
-  }
+	font-size: 16px;
+	background-color: transparent;
+	color: $white;
 }
 
 a {
-  color: $white;
-  text-decoration: none;
-  transition: border-color 0.3s ease-in-out;
-  border-bottom: 1px solid transparent;
-  animation: drawing 0.4s;
+	color: $white;
+	text-decoration: none;
+	transition: border-color 0.3s ease-in-out;
+	border-bottom: 1px solid transparent;
+	animation: drawing 0.4s;
+	user-select: none;
 
-  &:hover {
-    border-color: $primary;
-  }
+	&:hover {
+		border-color: $primary;
+	}
 }
 
 input[type='number'] {
-  -moz-appearance: textfield;
-  -webkit-appearance: none;
-  appearance: none;
+	-moz-appearance: textfield;
+	-webkit-appearance: none;
+	appearance: none;
 
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 }

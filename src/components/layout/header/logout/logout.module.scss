@@ -1,0 +1,29 @@
+@use 'sass:color';
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.logout {
+	> button {
+		@include transition(color);
+		@include flex-horizontal-center;
+		justify-content: center;
+
+		background-color: $bg-block;
+		color: color.adjust($text-gray, $lightness: 20%);
+		border: none;
+		border-radius: 50%;
+
+		width: 40px;
+		height: 40px;
+		// padding: 2px;
+
+		&:hover {
+			color: $white;
+		}
+
+		> svg {
+			width: 22px;
+			height: 22px;
+		}
+	}
+}

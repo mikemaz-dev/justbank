@@ -157,6 +157,20 @@ class RQuery {
 		}
 	}
 
+	/** Get or set the text content of the selected element
+	 * @param {string} [htmlContent] - Optional text content to set. If not provided, the current text content will be returned
+	 * @returns {RQuery | string} The current RQuery instance for chaining
+	 */
+
+	text(textContent) {
+		if (typeof textContent === 'undefined') {
+			return this.element.textContent
+		} else {
+			this.element.textContent = textContent
+			return this
+		}
+	}
+
 	/**
 	 * Set the CSS styles style of the selected element
 	 * @param {string} property - The css property to set
@@ -196,6 +210,25 @@ class RQuery {
 			this.element.classList.remove(classNames)
 		}
 		return this
+	}
+
+	/**
+	 * Set or get a value of an attribute on the selected element
+	 * @param {string} attributeName The name of attribute to set or get
+	 * @param {string} [value] The value to set for attribute. If not provided, th current value of the attribute will be returned
+	 * @returns {RQuery | string} The current RQuery instance for chaining
+	 */
+
+	attr(attributeName, value) {
+		if (typeof attributeName !== 'string') {
+			throw new Error('Attribute name must be provided')
+		}
+		if (typeof value === 'undefined') {
+			return this.element.getAttribute(attributeName)
+		} else {
+			this.element.setAttribute(attributeName, value)
+			return this
+		}
 	}
 }
 

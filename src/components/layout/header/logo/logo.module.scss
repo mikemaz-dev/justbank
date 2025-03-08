@@ -1,0 +1,11 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.logo {
+	> a {
+		color: #fff;
+		font-weight: 600;
+		font-size: 30px;
+		text-decoration: none;
+	}
+}

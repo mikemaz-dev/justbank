@@ -21,7 +21,15 @@ export class Layout extends ChildComponent {
 		const contentContainer = $R(this.element).find('#content')
 		contentContainer.append(this.children)
 
-		mainElement.insertAdjacentElement('beforebegin', new Header().render())
+		mainElement.insertAdjacentElement(
+			'beforebegin',
+			new Header({
+				router: this.router
+			}).render()
+		)
+
+		console.log(this.router)
+
 		mainElement.append(contentContainer.element)
 
 		return this.element
