@@ -1,0 +1,77 @@
+/**
+ * RedQuery is a minimalistic library for handling API requests
+ * Fetch data from API with provided options
+ * @param {Object} options - Configuration object for the API request
+ * @param {string} options.path - The API endpoint path
+ * @param {('GET' | 'POST' | 'PATCH' | 'DELETE' | 'PUT')} [options.method='GET'] - The HTTP method to use for the request
+ * @param {Object} [options.body=null] - The request payload to send as JSON
+ * @param {Object} [options.headers={}] - Additional headers to include with requests
+ * @param {Function} [options.onSuccess=null] - Callback function to be called on successful response
+ * @param {Function} [options.onError=null] - Callback function to be called on error response
+ * @returns {Promise<{isLoading: boolean, error: string | null, data: any | null}>} - An object containing the loading state, error, and data from the response
+ */
+
+import { SERVER_URL } from '@/config/url.config'
+import { extractMessage } from './extract-error-message'
+
+export async function RedQuery({
+	path,
+	body = null,
+	headers = {},
+	method = 'GET',
+	onError = null,
+	onSuccess = null
+}) {
+	let isLoading = true,
+		error = null,
+		data = null,
+		url = `${SERVER_URL}/api/${path}`
+
+	/* ACCESS_TOKEN from LocalStorage */
+	const accessToken = ''
+
+	const requestOptions = {
+		method,
+		headers: {
+			'Content-type': 'application/json',
+			...headers
+		}
+	}
+
+	if (accessToken) {
+		requestOptions.headers.Authorization = `Bearer ${accessToken}`
+	}
+
+	if (body) {
+		requestOptions.body = JSON.stringify(body)
+	}
+
+	try {
+		const response = await fetch(url, requestOptions)
+
+		if (response.ok) {
+			data = await response.json()
+
+			if (onSuccess) {
+				onSuccess(data)
+			}
+		} else {
+			const errorData = await response.json()
+			const errorMessage = extractMessage(errorData)
+
+			if (onError) {
+				onError(errorMessage)
+			}
+			/* Notification error */
+		}
+	} catch (error) {
+		const errorData = await response.json()
+		const errorMessage = extractMessage(errorData)
+
+		if (onError) {
+			onError(errorMessage)
+		}
+	} finally {
+		isLoading = false
+	}
+}
