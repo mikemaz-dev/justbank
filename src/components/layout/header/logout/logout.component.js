@@ -1,9 +1,9 @@
 import ChildComponent from '@/core/component/child.component.js'
+import { $R } from '@/core/rquery/rquery.lib'
 import renderService from '@/core/services/render.service.js'
 
 import * as styles from './logout.module.scss'
 import template from './logout.template.html'
-import { $R } from '@/core/rquery/rquery.lib'
 
 export class LogoutButton extends ChildComponent {
 	constructor({ router }) {

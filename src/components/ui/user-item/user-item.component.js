@@ -1,9 +1,9 @@
 import ChildComponent from '@/core/component/child.component.js'
+import { $R } from '@/core/rquery/rquery.lib'
 import renderService from '@/core/services/render.service.js'
 
 import * as styles from './user-item.module.scss'
 import template from './user-item.template.html'
-import { $R } from '@/core/rquery/rquery.lib'
 
 export class userItem extends ChildComponent {
 	constructor(user, isGray = false, onClick) {

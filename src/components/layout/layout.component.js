@@ -1,9 +1,12 @@
+import ChildComponent from '@/core/component/child.component'
+import { $R } from '@/core/rquery/rquery.lib'
 import renderService from '@/core/services/render.service.js'
+
 import * as styles from './layout.module.scss'
 import template from './layout.template.html'
-import { $R } from '@/core/rquery/rquery.lib'
+
 import { Header } from './header/header.component.js'
-import ChildComponent from '@/core/component/child.component'
+import { Notification } from './notification/notification.component.js'
 
 export class Layout extends ChildComponent {
 	constructor({ router, children }) {
@@ -14,7 +17,7 @@ export class Layout extends ChildComponent {
 	}
 
 	render() {
-		this.element = renderService.htmlToElement(template, [], styles)
+		this.element = renderService.htmlToElement(template, [Notification], styles)
 
 		const mainElement = this.element.querySelector('main')
 
@@ -27,8 +30,6 @@ export class Layout extends ChildComponent {
 				router: this.router
 			}).render()
 		)
-
-		console.log(this.router)
 
 		mainElement.append(contentContainer.element)
 

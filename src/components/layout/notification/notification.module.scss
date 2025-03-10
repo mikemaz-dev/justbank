@@ -1,0 +1,39 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.notification {
+	display: none;
+	position: fixed;
+	z-index: 5;
+
+	top: 3rem;
+	right: 3rem;
+	padding: 0.7rem 1.4rem;
+
+	border-radius: $radius;
+	background-color: rgb(255 74 74);
+	box-shadow: 0.3px 6px rgba(0, 0, 0, 0.16);
+
+	cursor: default;
+	animation: slideIn 1s;
+
+	&.error,
+	&.success {
+		display: block;
+	}
+
+	&.success {
+		background-color: #2e8677;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(200px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}

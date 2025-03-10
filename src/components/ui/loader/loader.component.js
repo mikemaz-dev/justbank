@@ -1,9 +1,9 @@
 import ChildComponent from '@/core/component/child.component.js'
+import { $R } from '@/core/rquery/rquery.lib'
 import renderService from '@/core/services/render.service.js'
 
 import * as styles from './loader.module.scss'
 import template from './loader.template.html'
-import { $R } from '@/core/rquery/rquery.lib'
 
 export const LOADER_SELECTOR = '[data-component="loader"]'
 

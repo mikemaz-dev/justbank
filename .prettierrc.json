@@ -5,6 +5,7 @@
 	"tabWidth": 2,
 	"semi": false,
 	"trailingComma": "none",
+	"plugins": ["@trivago/prettier-plugin-sort-imports"],
 	"importOrder": [
 		"<THIRD_PARTY_MODULES>",
 		"^@/core/(.*)$",

@@ -1,7 +1,9 @@
-import { NotFound } from '@/components/screens/not-found/not-found.component'
-import { ROUTES } from './routes.data.js'
 import { Layout } from '@/components/layout/layout.component.js'
+import { NotFound } from '@/components/screens/not-found/not-found.component'
+
 import { $R } from '../rquery/rquery.lib.js'
+
+import { ROUTES } from './routes.data.js'
 
 export class Router {
 	#routes = ROUTES

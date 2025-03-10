@@ -1,9 +1,9 @@
 import ChildComponent from '@/core/component/child.component.js'
+import { $R } from '@/core/rquery/rquery.lib'
 import renderService from '@/core/services/render.service.js'
 
 import * as styles from './heading.module.scss'
 import template from './heading.template.html'
-import { $R } from '@/core/rquery/rquery.lib'
 
 export class Heading extends ChildComponent {
 	constructor(title = '') {
