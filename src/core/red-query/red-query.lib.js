@@ -1,10 +1,10 @@
-import { SERVER_URL } from '@/config/url.config'
+import { SERVER_URL } from '@/config/url.config.js'
 
-import { NotificationService } from '../services/notification.service'
-import { StorageService } from '../services/storage.service'
+import { NotificationService } from '../services/notification.service.js'
+import { StorageService } from '../services/storage.service.js'
 
-import { extractMessage } from './extract-error-message'
-import { ACCESS_TOKEN_KEY } from '@/constants/auth.constants'
+import { extractMessage } from './extract-error-message.js'
+import { ACCESS_TOKEN_KEY } from '@/constants/auth.constants.js'
 
 /**
  * RedQuery is a minimalistic library for handling API requests

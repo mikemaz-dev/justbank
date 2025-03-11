@@ -8,8 +8,11 @@
 	border-radius: $radius;
 	border: 1px solid transparent;
 	padding: 12px 20px;
-	// margin-bottom: 1.3rem;
+	width: 100%;
 	display: block;
+	> input {
+		width: 100%;
+	}
 
 	&:focus-within {
 		border-color: rgba($primary, 0.5);

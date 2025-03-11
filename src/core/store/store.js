@@ -1,6 +1,6 @@
-import { StorageService } from '../services/storage.service'
+import { StorageService } from '../services/storage.service.js'
 
-import { ACCESS_TOKEN_KEY, USER_STORAGE_KEY } from '@/constants/auth.constants'
+import { ACCESS_TOKEN_KEY, USER_STORAGE_KEY } from '@/constants/auth.constants.js'
 
 // Singleton pattern
 

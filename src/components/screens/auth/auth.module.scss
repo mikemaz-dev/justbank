@@ -1,4 +1,46 @@
+@use 'sass:color';
 @use '@/styles/mixins' as *;
 @use '@/styles/variables' as *;
 
-.auth { }
+.auth-container {
+	@include flex-horizontal-center;
+	justify-content: center;
+	min-height: 87vh;
+
+	> form {
+		@include flex-column-center;
+		@include dashboard-section;
+		width: 35%;
+		padding: 0.9rem 1.5rem;
+		border-radius: 0.5rem;
+
+		> div {
+			@include flex-column-center;
+			width: 100%;
+			gap: 1.2rem;
+		}
+
+		> button {
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.auth-link {
+			> span {
+				color: color.adjust($text-gray, $lightness: 30%);
+			}
+			> button {
+				padding: 0;
+				background-color: transparent;
+				color: color.adjust($text-gray, $lightness: 70%);
+				@include transition(all);
+				border-bottom: 1px solid transparent;
+				user-select: none;
+
+				&:hover {
+					border-color: $primary;
+				}
+			}
+		}
+	}
+}
