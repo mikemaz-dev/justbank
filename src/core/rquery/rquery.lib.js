@@ -100,6 +100,25 @@ class RQuery {
 	}
 
 	/**
+	 * Set an event listener for the submit event of a form element
+	 * @param {function(Event): void} onSubmit - The event listener for the form's submit event
+	 * @returns {Object} The current RQuery instance for chaining
+	 */
+
+	submit(onSubmit) {
+		if (this.element.tagName.toLowerCase() === 'form') {
+			this.element.addEventListener('submit', e => {
+				e.preventDefault()
+				onSubmit(e)
+			})
+		} else {
+			throw new Error('Element must be a form')
+		}
+
+		return this
+	}
+
+	/**
 	 * Set attribute and event listener for a number input element
 	 * @param {number} [limit] - The maximum length of input value.
 	 * @returns {RQuery} The current RQuery instance for chaining

@@ -10,8 +10,9 @@
 	> form {
 		@include flex-column-center;
 		@include dashboard-section;
+		border: 1px solid color.adjust($primary, $lightness: -50%);
 		width: 35%;
-		padding: 0.9rem 1.5rem;
+		padding: 1.5rem 1.5rem;
 		border-radius: 0.5rem;
 
 		> div {
@@ -28,6 +29,7 @@
 		.auth-link {
 			> span {
 				color: color.adjust($text-gray, $lightness: 30%);
+				pointer-events: none;
 			}
 			> button {
 				padding: 0;
