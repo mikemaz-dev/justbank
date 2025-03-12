@@ -160,7 +160,7 @@ class RQuery {
 		return this
 	}
 
-	/* html and css */
+	/* html */
 
 	/** Get or set the inter html of the selected element
 	 * @param {string} [htmlContent] - Optional HTML content to set. If not provided, will be returned current html
@@ -188,6 +188,28 @@ class RQuery {
 			this.element.textContent = textContent
 			return this
 		}
+	}
+
+	// Styles
+
+	/**
+	 * Shows the selected element by removing the 'display' style property
+	 * @returns {RQuery} The current RQuery instance for chaining
+	 */
+
+	show() {
+		this.element.style.removeProperty('display')
+		return this
+	}
+
+	/**
+	 * Hides the selected element by setting it display style to 'none'
+	 * @returns {RQuery} The current RQuery instance for chaining
+	 */
+
+	hide() {
+		this.element.style.display = 'none'
+		return this
 	}
 
 	/**

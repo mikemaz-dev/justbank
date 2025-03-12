@@ -3,7 +3,7 @@ import { NotificationService } from '@/core/services/notification.service'
 import { Store } from '@/core/store/store'
 
 export class AuthService {
-	#BASE_URL = '/auth'
+	#BASE_URL = 'auth'
 
 	constructor() {
 		this.store = Store.getInstance()

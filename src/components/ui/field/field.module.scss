@@ -12,6 +12,9 @@
 	display: block;
 	> input {
 		width: 100%;
+		&::placeholder {
+			user-select: none;
+		}
 	}
 
 	&:focus-within {

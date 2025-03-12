@@ -34,7 +34,7 @@ export class Auth extends BaseScreen {
 		return formValues.email && formValues.password
 	}
 
-	#changeFormType = event => {
+	#toggleFormType = event => {
 		event.preventDefault()
 		$R(this.element)
 			.find('h1')
@@ -58,7 +58,8 @@ export class Auth extends BaseScreen {
 	#handleSubmit = event => {
 		const formValues = formService.getFormValues(event.target)
 		if (!this.#validateFields(formValues)) return
-		new this.authService.main(this.#isTypeLogin, formValues)
+
+		this.authService.main(this.#isTypeLogin ? 'login' : 'register', formValues)
 	}
 
 	render() {
@@ -89,7 +90,7 @@ export class Auth extends BaseScreen {
 				}).render()
 			)
 
-		$R(this.element).find('#auth-toggle').click(this.#changeFormType)
+		$R(this.element).find('#auth-toggle').click(this.#toggleFormType)
 		$R(this.element).find('form').submit(this.#handleSubmit)
 
 		return this.element
