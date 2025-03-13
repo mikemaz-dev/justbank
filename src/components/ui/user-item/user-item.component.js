@@ -5,7 +5,7 @@ import renderService from '@/core/services/render.service.js'
 import * as styles from './user-item.module.scss'
 import template from './user-item.template.html'
 
-export class userItem extends ChildComponent {
+export class UserItem extends ChildComponent {
 	constructor(user, isGray = false, onClick) {
 		super()
 

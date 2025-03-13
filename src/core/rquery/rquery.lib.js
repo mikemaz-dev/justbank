@@ -72,6 +72,23 @@ class RQuery {
 
 	/* Events */
 
+	/**
+	 * Add an event listener to the selected element for the specified event type
+	 * @param {string} eventType - The type of event listener (e.g., 'click', 'input', etc.)
+	 * @param {function(Event): void} callback - The event listener function to execute when the event is triggered. The function will receive the event object as its argument
+	 * @return {RQuery} The current RQuery instance for chaining
+	 */
+
+	on(evenType, callback) {
+		if (typeof evenType !== 'string' || typeof callback !== 'function') {
+			throw new Error(
+				'eventType must be a string and callback must be a function'
+			)
+		}
+
+		this.element.addEventListener(evenType, callback)
+	}
+
 	/** Attach a click event listener to the selected element.
 	 * @param {function(Event): void}  callback - The event listener function to execute when the selected element is clicked. The function will receive the event object as its argument.
 	 * @return {RQuery} The current RQuery instance for chaining

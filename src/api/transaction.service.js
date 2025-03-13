@@ -1,13 +1,15 @@
 import { RedQuery } from '@/core/red-query/red-query.lib'
 
-export class UserService {
-	#BASE_URL = '/users'
+export class TransactionService {
+	#BASE_URL = '/transactions'
 
-	getAll(searchTerm, onSuccess) {
+	getAll(onSuccess) {
 		return RedQuery({
-			path: `${this.#BASE_URL}${
-				searchTerm ? `?${new URLSearchParams({ searchTerm })}` : ''
-			}`,
+			path:
+				this.#BASE_URL +
+				`?${new URLSearchParams({
+					orderBy: 'desc'
+				})}`,
 			onSuccess
 		})
 	}

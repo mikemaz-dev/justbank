@@ -36,6 +36,9 @@ export class Auth extends BaseScreen {
 
 	#toggleFormType = event => {
 		event.preventDefault()
+
+		this.#isTypeLogin = !this.#isTypeLogin
+
 		$R(this.element)
 			.find('h1')
 			.text(this.#isTypeLogin ? 'Sign in' : 'Register')
@@ -51,8 +54,6 @@ export class Auth extends BaseScreen {
 		$R(this.element)
 			.find('#auth-toggle>button')
 			.text(this.#isTypeLogin ? 'Register' : 'Sign in')
-
-		this.#isTypeLogin = !this.#isTypeLogin
 	}
 
 	#handleSubmit = event => {

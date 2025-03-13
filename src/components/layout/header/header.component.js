@@ -3,7 +3,7 @@ import { $R } from '@/core/rquery/rquery.lib'
 import renderService from '@/core/services/render.service.js'
 import { Store } from '@/core/store/store'
 
-import { userItem } from '@/components/ui/user-item/user-item.component'
+import { UserItem } from '@/components/ui/user-item/user-item.component'
 
 import * as styles from './header.module.scss'
 import template from './header.template.html'
@@ -19,7 +19,7 @@ export class Header extends ChildComponent {
 		this.store = Store.getInstance()
 		this.store.addObserver(this)
 
-		this.userItem = new userItem(
+		this.userItem = new UserItem(
 			{
 				avatarPath: './icons/user.svg',
 				name: 'User'
