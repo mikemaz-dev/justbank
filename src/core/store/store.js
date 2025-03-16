@@ -1,6 +1,9 @@
 import { StorageService } from '../services/storage.service.js'
 
-import { ACCESS_TOKEN_KEY, USER_STORAGE_KEY } from '@/constants/auth.constants.js'
+import {
+	ACCESS_TOKEN_KEY,
+	USER_STORAGE_KEY
+} from '@/constants/auth.constants.js'
 
 // Singleton pattern
 
@@ -91,6 +94,10 @@ export class Store {
 		this.storageService.removeItem(ACCESS_TOKEN_KEY)
 	}
 
+	/**
+	 * Update user card.
+	 * @param {Object} card - The card object.
+	 */
 	updateCard(card) {
 		const oldUser = this.state.user
 		const newUser = { ...oldUser, card }

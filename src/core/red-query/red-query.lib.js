@@ -53,28 +53,33 @@ export async function RedQuery({
 
 	try {
 		const response = await fetch(url, requestOptions)
+		try {
+			if (response.ok) {
+				data = await response.json()
+				if (onSuccess) {
+					onSuccess(data)
+				}
+			} else {
+				let errorMessage = 'Unknown error'
+				try {
+					const errorData = await response.json()
+					errorMessage = extractMessage(errorData)
+				} catch {
+					errorMessage = 'Failed to parse error response'
+				}
 
-		if (response.ok) {
-			data = await response.json()
-
-			if (onSuccess) {
-				onSuccess(data)
+				if (onError) {
+					onError(errorMessage)
+				}
+				new NotificationService().show('error', errorMessage)
 			}
-		} else {
-			const errorData = await response.json()
-			const errorMessage = extractMessage(errorData)
+		} catch (error) {
+			const errorMessage = 'Network error or server unavailable'
 
 			if (onError) {
 				onError(errorMessage)
 			}
 			new NotificationService().show('error', errorMessage)
-		}
-	} catch (error) {
-		const errorData = await response.json()
-		const errorMessage = extractMessage(errorData)
-
-		if (onError) {
-			onError(errorMessage)
 		}
 	} finally {
 		isLoading = false

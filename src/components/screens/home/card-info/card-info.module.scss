@@ -1,0 +1,63 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+p {
+	color: $text-gray;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+button {
+	padding: 0;
+	background-color: transparent;
+}
+
+.card-info {
+	@include dashboard-section;
+	display: flex;
+	align-items: stretch;
+	width: max-content;
+
+	> .line {
+		background-color: rgba($text-gray, 20%);
+		width: 1px;
+		padding: 0;
+		// margin: 0 1rem;
+	}
+
+	.card-number {
+		@include flex-horizontal-center;
+		gap: 0.8rem;
+
+		> div:first-child {
+			@include flex-horizontal-center;
+			padding: 0.1rem;
+			border-radius: 100%;
+			background-color: $gray;
+		}
+	}
+
+	.cvc {
+		@include flex-column-center;
+		align-items: start;
+		> div {
+			@include flex-horizontal-center;
+		}
+	}
+
+	.exp_date {
+		@include card_info;
+	}
+
+	> div {
+		padding: 0 30px;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 10px;
+		}
+	}
+}

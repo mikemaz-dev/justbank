@@ -3,7 +3,7 @@ import { NotificationService } from '@/core/services/notification.service'
 import { Store } from '@/core/store/store'
 
 export class CardService {
-	#BASE_URL = '/cards'
+	#BASE_URL = 'cards'
 
 	constructor() {
 		this.store = Store.getInstance()
@@ -13,6 +13,7 @@ export class CardService {
 	byUser(onSuccess) {
 		return RedQuery({
 			path: `${this.#BASE_URL}/by-user`,
+			method: 'GET',
 			onSuccess
 		})
 	}

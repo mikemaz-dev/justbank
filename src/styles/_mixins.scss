@@ -12,6 +12,12 @@
 	}
 }
 
+@mixin card_info {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
 @mixin flex-horizontal-center {
 	display: flex;
 	align-items: center;
