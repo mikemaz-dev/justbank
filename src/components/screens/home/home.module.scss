@@ -1,7 +1,8 @@
 @use '@/styles/variables' as *;
 
 .home {
+	padding-top: $gap;
 	display: grid;
-	grid-template-columns: 2.2fr 1fr;
-	gap: $gap;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
 }

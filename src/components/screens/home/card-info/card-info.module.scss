@@ -4,7 +4,10 @@
 p {
 	color: $text-gray;
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 14px;
+}
+span {
+	font: 900;
 }
 
 button {
@@ -15,14 +18,11 @@ button {
 .card-info {
 	@include dashboard-section;
 	display: flex;
-	align-items: stretch;
-	width: max-content;
 
 	> .line {
 		background-color: rgba($text-gray, 20%);
 		width: 1px;
 		padding: 0;
-		// margin: 0 1rem;
 	}
 
 	.card-number {
@@ -50,7 +50,7 @@ button {
 	}
 
 	> div {
-		padding: 0 30px;
+		padding: 0 45px;
 
 		&:first-child {
 			padding-left: 0;

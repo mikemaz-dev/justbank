@@ -11,7 +11,9 @@ import { CardService } from '@/api/card.service.js'
 import * as styles from './card-info.module.scss'
 import template from './card-info.template.html'
 
-const CODE = '***'
+import { BALANCED_UPDATED } from '@/constants/event.constants'
+
+const CODE = '*****'
 
 export class CardInfo extends ChildComponent {
 	constructor() {
@@ -21,6 +23,24 @@ export class CardInfo extends ChildComponent {
 		this.cardService = new CardService()
 
 		this.element = renderService.htmlToElement(template, [], styles)
+
+		this.#addListeners()
+	}
+
+	#addListeners() {
+		document.addEventListener(BALANCED_UPDATED, this.#onBalanceUpdated)
+	}
+
+	#removeListeners() {
+		document.removeEventListener(BALANCED_UPDATED, this.#onBalanceUpdated)
+	}
+
+	#onBalanceUpdated = () => {
+		this.fetchData()
+	}
+
+	destroy() {
+		this.#removeListeners()
 	}
 
 	#copyCardNumber(e) {
@@ -52,11 +72,11 @@ export class CardInfo extends ChildComponent {
 
 		$R(this.element)
 			.find('#card-number')
-			.text(formatCardNumber(this.card.number))	
+			.text(formatCardNumber(this.card.number))
 			.click(this.#copyCardNumber.bind(this))
 
 		const cardCvcElement = $R(this.element).find('#card-cvc')
-		cardCvcElement.text(CODE).css('width', '35px')
+		cardCvcElement.text(CODE).css('width', '44px')
 
 		$R(this.element).find('#card-expire-date').text(this.card.expireDate)
 

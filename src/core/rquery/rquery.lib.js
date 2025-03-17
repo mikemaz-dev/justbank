@@ -129,6 +129,20 @@ class RQuery {
 	}
 
 	/**
+	 * Gets or sets the value of input element
+	 * @param {*} [newValue] - The new value to ser for the input element. If not provided, the method returns the current value
+	 * @return {string | RQuery} - If newValue is provided, returns the RQuery instance. Otherwise, returns the current value of the input element
+	 */
+	value(newValue) {
+		if (typeof newValue !== 'undefined') {
+			return this.element.value
+		} else {
+			this.element.value = newValue
+			return this
+		}
+	}
+
+	/**
 	 * Set an event listener for the submit event of a form element
 	 * @param {function(Event): void} onSubmit - The event listener for the form's submit event
 	 * @returns {Object} The current RQuery instance for chaining
@@ -299,6 +313,20 @@ class RQuery {
 			this.element.setAttribute(attributeName, value)
 			return this
 		}
+	}
+
+	/**
+	 * Removes the attribute from the current element
+	 * @param {*} attrName - The name of the attribute to remove
+	 * @return {RQuery} The current RQuery instance for chaining
+	 */
+	removeAttr(attrName) {
+		if (typeof attrName !== 'string') {
+			throw new Error('Attribute name must be provided')
+		}
+		this.element.removeAttribute(attrName)
+
+		return this
 	}
 }
 

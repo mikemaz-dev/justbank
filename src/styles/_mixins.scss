@@ -1,7 +1,6 @@
 @use './_variables.scss' as *;
 
 @mixin dashboard-section($variant: 'big') {
-	margin-top: $gap;
 	background-color: $bg-block;
 	border-radius: $radius;
 

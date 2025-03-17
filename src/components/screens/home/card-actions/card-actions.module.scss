@@ -1,0 +1,19 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.card-actions {
+	@include dashboard-section('small');
+	@include flex-column-center;
+	align-items: start;
+	gap: 1rem;
+
+	> div {
+		width: 100%;
+		@include flex-horizontal-center;
+		justify-content: space-between;
+		gap: 1rem;
+		> button {
+			width: 100%;
+		}
+	}
+}
