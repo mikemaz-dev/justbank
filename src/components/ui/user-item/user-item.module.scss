@@ -9,6 +9,7 @@
 	@include flex-horizontal-center;
 	color: $white;
 	font-size: 17px;
+	@include transition(background-color);
 
 	&:disabled {
 		cursor: default;

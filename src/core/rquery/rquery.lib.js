@@ -134,7 +134,7 @@ class RQuery {
 	 * @return {string | RQuery} - If newValue is provided, returns the RQuery instance. Otherwise, returns the current value of the input element
 	 */
 	value(newValue) {
-		if (typeof newValue !== 'undefined') {
+		if (typeof newValue === 'undefined') {
 			return this.element.value
 		} else {
 			this.element.value = newValue

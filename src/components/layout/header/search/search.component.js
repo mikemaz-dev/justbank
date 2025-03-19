@@ -5,11 +5,14 @@ import renderService from '@/core/services/render.service.js'
 import { UserItem } from '@/components/ui/user-item/user-item.component'
 
 import { debounce } from '@/utils/debounce.util'
+import { formatCardNumberWithDashes } from '@/utils/format/format-card-number'
 
 import { UserService } from '@/api/user.service'
 
 import * as styles from './search.module.scss'
 import template from './search.template.html'
+
+import { TRANSFER_FIELD_SELECTOR } from '@/constants/selectors.constants'
 
 export class Search extends ChildComponent {
 	constructor() {
@@ -28,8 +31,13 @@ export class Search extends ChildComponent {
 
 		await this.userService.getAll(searchTerm, users => {
 			searchResultElement.html('')
+
 			users.forEach((user, i) => {
 				const userItem = new UserItem(user, true, () => {
+					$R(TRANSFER_FIELD_SELECTOR).value(
+						formatCardNumberWithDashes(user.card.number)
+					)
+
 					searchResultElement.html('')
 				}).render()
 

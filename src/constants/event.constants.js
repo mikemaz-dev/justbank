@@ -1,2 +1,2 @@
 export const BALANCED_UPDATED = 'balanceUpdated'
-export const BALANCED_COMPLETED = 'transactionCompleted'
+export const TRANSACTION_COMPLETED = 'transactionCompleted'

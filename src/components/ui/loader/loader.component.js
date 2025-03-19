@@ -1,5 +1,4 @@
 import ChildComponent from '@/core/component/child.component.js'
-import { $R } from '@/core/rquery/rquery.lib'
 import renderService from '@/core/services/render.service.js'
 
 import * as styles from './loader.module.scss'
@@ -17,10 +16,8 @@ export class Loader extends ChildComponent {
 	render() {
 		this.element = renderService.htmlToElement(template, [], styles)
 
-		$R(this.element)
-			.css('width', `${this.width}px`)
-			.css('height', `${this.height}px`)
-			.addClass('bounce')
+		this.element.style = `width: ${this.width}px; height: ${this.height}px; `
+		this.element.classList.add('bounce')
 
 		return this.element
 	}

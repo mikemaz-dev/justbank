@@ -1,6 +1,17 @@
+@use 'sass:color';
 @use './variables' as *;
 @use './reset';
 @use './keyframes';
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: color.adjust($gray, $lightness: 18%);
+	border-radius: $radius;
+}
 
 input,
 button,

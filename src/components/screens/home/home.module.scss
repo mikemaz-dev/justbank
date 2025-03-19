@@ -5,4 +5,10 @@
 	display: grid;
 	grid-template-columns: 2fr 1fr;
 	gap: 2rem;
+
+	.right-side {
+		display: flex;
+		flex-direction: column;
+		gap: $gap;
+	}
 }

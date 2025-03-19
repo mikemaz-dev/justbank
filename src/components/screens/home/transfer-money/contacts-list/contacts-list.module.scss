@@ -1,0 +1,12 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.contacts-list {
+	@include flex-column-center;
+	gap: 1rem;
+	> button {
+		width: 100%;
+		border-top-left-radius: 13px;
+		border-bottom-left-radius: 13px;
+	}
+}

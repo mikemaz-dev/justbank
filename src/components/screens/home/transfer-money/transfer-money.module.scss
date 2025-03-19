@@ -1,0 +1,6 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.transfer-money {
+	@include dashboard-section('small');
+}
