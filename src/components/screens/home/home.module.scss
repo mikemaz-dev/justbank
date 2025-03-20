@@ -6,6 +6,12 @@
 	grid-template-columns: 2fr 1fr;
 	gap: 2rem;
 
+	.left-side {
+		display: flex;
+		flex-direction: column;
+		gap: $gap;
+	}
+
 	.right-side {
 		display: flex;
 		flex-direction: column;

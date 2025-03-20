@@ -65,7 +65,7 @@ export class ContactsList extends ChildComponent {
 		if (this.store.user) {
 			$R(this.element)
 				.find('#contacts-list')
-				.html(new Loader().render().outerHTML)
+				.html(new Loader(300, 300).render().outerHTML)
 
 			this.fetchData()
 		}

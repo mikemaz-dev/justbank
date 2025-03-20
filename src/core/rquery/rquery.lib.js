@@ -143,6 +143,12 @@ class RQuery {
 	}
 
 	/**
+	 * Get or set the `src` attribute of an `<img>` element.
+	 * @param {string} [url] - The image URL to set. If not provided, returns the current `src` value.
+	 * @returns {RQuery | string} The current RQuery instance for chaining or the current `src` value.
+	 */
+
+	/**
 	 * Set an event listener for the submit event of a form element
 	 * @param {function(Event): void} onSubmit - The event listener for the form's submit event
 	 * @returns {Object} The current RQuery instance for chaining
@@ -223,6 +229,18 @@ class RQuery {
 	 * @param {string} [htmlContent] - Optional text content to set. If not provided, the current text content will be returned
 	 * @returns {RQuery | string} The current RQuery instance for chaining
 	 */
+	src(url) {
+		if (this.element.tagName.toLowerCase() !== 'img') {
+			throw new Error('Element must be an <img> tag')
+		}
+
+		if (typeof url === 'undefined') {
+			return this.element.getAttribute('src')
+		} else {
+			this.element.setAttribute('src', url)
+			return this
+		}
+	}
 
 	text(textContent) {
 		if (typeof textContent === 'undefined') {
