@@ -1,14 +1,6 @@
 @use '@/styles/mixins' as *;
 @use '@/styles/variables' as *;
 
-p {
-	color: $text-gray;
-	text-transform: uppercase;
-	font-size: 14px;
-}
-span {
-	font: 900;
-}
 
 button {
 	padding: 0;
@@ -16,6 +8,14 @@ button {
 }
 
 .card-info {
+	p {
+		color: $text-gray;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	span {
+		font: 900;
+	}
 	@include dashboard-section;
 	display: flex;
 

@@ -32,12 +32,14 @@ class RQuery {
 	 */
 
 	find(selector) {
-		const element = new RQuery(this.element.querySelector(selector))
-		if (element) {
-			return element
-		} else {
-			throw new Error(`Element ${selector} not found`)
+		const element = this.element.querySelector(selector)
+
+		if (!element) {
+			console.warn(`Element with selector "${selector}" not found`)
+			return null
 		}
+
+		return new RQuery(element)
 	}
 
 	/**

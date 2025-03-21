@@ -79,7 +79,7 @@ export async function RedQuery({
 			if (onError) {
 				onError(errorMessage)
 			}
-			new NotificationService().show('error', errorMessage)
+			new NotificationService().show('error', error)
 		}
 	} finally {
 		isLoading = false

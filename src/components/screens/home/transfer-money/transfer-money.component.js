@@ -7,7 +7,6 @@ import * as styles from './transfer-money.module.scss'
 import template from './transfer-money.template.html'
 
 import { ContactsList } from './contacts-list/contacts-list.component.js'
-import { TransferField } from './transfer-field/transfer-field.component.js'
 
 export class TransferMoney extends ChildComponent {
 	render() {
