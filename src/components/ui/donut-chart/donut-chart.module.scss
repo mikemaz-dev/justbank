@@ -1,0 +1,39 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.donut-chart {
+	display: inline-block;
+	position: relative;
+
+	> svg path {
+		@include transition(transform);
+
+		&:first-child:hover {
+			transform: translateX(4px);
+		}
+
+		&:last-child:hover {
+			transform: translateX(-4px);
+		}
+	}
+}
+
+@keyframes draw {
+	0% {
+		stroke-dasharray: 0 1000;
+	}
+
+	100% {
+		stroke-dasharray: 1000 0;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

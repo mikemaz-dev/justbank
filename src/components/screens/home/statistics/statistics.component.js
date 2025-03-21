@@ -14,6 +14,7 @@ import { StatisticService } from '@/api/statistic.service'
 import * as styles from './statistics.module.scss'
 import template from './statistics.template.html'
 
+import { CircleChart } from './circle-chart/circle-chart.component.js'
 import { IncExp } from './inc-exp_widget/inc-exp.component.js'
 
 export class Statistics extends ChildComponent {
@@ -30,23 +31,6 @@ export class Statistics extends ChildComponent {
 		)
 
 		this.#addListeners
-	}
-
-	fetchData() {
-		this.statisticService.main(data => {
-			if (!data) return
-
-			const loaderElement = this.element.querySelector(LOADER_SELECTOR)
-			if (loaderElement) loaderElement.remove()
-
-			const statsItemsElement = $R(this.element).find('#stats-items')
-			statsItemsElement.text('')
-
-			// const circleChartElement = $R(this.element).find('#circle-chart')
-			// circleChartElement.text('')
-
-			statsItemsElement.append(new IncExp(data).render())
-		})
 	}
 
 	#addListeners() {
@@ -69,6 +53,43 @@ export class Statistics extends ChildComponent {
 
 	destroy() {
 		this.#removeListeners()
+	}
+
+	renderChart(income, expense) {
+		const total = income + expense
+		let incomePercent = (income * 100) / total,
+			expensePercent = 100 - incomePercent
+
+		if (income && !expense) {
+			incomePercent = 100
+			expensePercent = 0.1
+		}
+
+		if (!income && expense) {
+			incomePercent = 0.1
+			expensePercent = 100
+		}
+
+		return new CircleChart(incomePercent, expensePercent).render()
+	}
+
+	fetchData() {
+		this.statisticService.main(data => {
+			if (!data) return
+
+			const loaderElement = this.element.querySelector(LOADER_SELECTOR)
+			if (loaderElement) loaderElement.remove()
+
+			const statsItemsElement = $R(this.element).find('#stats-items')
+			statsItemsElement.text('')
+
+			const circleChartElement = $R(this.element).find('#circle-chart')
+			circleChartElement.text('')
+
+			statsItemsElement.append(new IncExp(data).render())
+
+			circleChartElement.append(this.renderChart(data[0].value, data[1].value))
+		})
 	}
 
 	render() {
