@@ -5,13 +5,6 @@ import {
 	USER_STORAGE_KEY
 } from '@/constants/auth.constants.js'
 
-// Singleton pattern
-
-/**
- * Store class implements the Singleton pattern, providing a centralized storage and state management solution.
- * It manages user login/logout and notifies observers of any changes in the state
- */
-
 export class Store {
 	/**
 	 * Create a new State instance
@@ -27,9 +20,7 @@ export class Store {
 		this.state = new Proxy(state, {
 			set: (target, property, value) => {
 				target[property] = value
-
 				this.notify()
-
 				return true
 			}
 		})
@@ -43,7 +34,6 @@ export class Store {
 		if (!Store.instance) {
 			Store.instance = new Store({ user: null })
 		}
-
 		return Store.instance
 	}
 
@@ -51,17 +41,17 @@ export class Store {
 	 * Add an observer from the store's list of observers
 	 * @param {Object} observer - The observer object to remove
 	 */
-
 	addObserver(observer) {
-		this.observers = this.observers.push(observer)
+		if (!this.observers.includes(observer)) {
+			this.observers.push(observer)
+		}
 	}
 
 	/**
 	 * Remove an observer from the store's list of observers
 	 * @param {Object} observer - The observer object to remove
 	 */
-
-	addObserver(observer) {
+	removeObserver(observer) {
 		this.observers = this.observers.filter(obs => obs !== observer)
 	}
 
@@ -70,7 +60,9 @@ export class Store {
 	 */
 	notify() {
 		for (const observer of this.observers) {
-			observer.update()
+			if (typeof observer.update === 'function') {
+				observer.update()
+			}
 		}
 	}
 
@@ -82,16 +74,19 @@ export class Store {
 		this.state.user = user
 		this.storageService.setItem(USER_STORAGE_KEY, user)
 		this.storageService.setItem(ACCESS_TOKEN_KEY, accessToken)
+
+		this.notify()
 	}
 
 	/**
 	 * Logout the user, update the state, and remove the user from the storage server
 	 */
-
 	logout() {
 		this.state.user = null
 		this.storageService.removeItem(USER_STORAGE_KEY)
 		this.storageService.removeItem(ACCESS_TOKEN_KEY)
+
+		this.notify()
 	}
 
 	/**
@@ -103,5 +98,6 @@ export class Store {
 		const newUser = { ...oldUser, card }
 		this.state.user = newUser
 		this.storageService.setItem(USER_STORAGE_KEY, newUser)
+		this.notify()
 	}
 }

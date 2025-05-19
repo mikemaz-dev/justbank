@@ -1,0 +1,11 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.auth-required-message {
+	@include dashboard-section;
+
+	a {
+		font-weight: 700;
+		color: $primary;
+	}
+}

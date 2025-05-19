@@ -7,7 +7,7 @@
 	"type": "module",
 	"main": "webpack.config.js",
 	"scripts": {
-		"dev": "webpack serve --mode development",
+		"dev": "webpack serve --mode development --open",
 		"build": "webpack --mode production",
 		"gc": "plop component"
 	},
