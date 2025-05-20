@@ -30,7 +30,7 @@ export async function RedQuery({
 	let isLoading = true,
 		error = null,
 		data = null,
-		url = `${SERVER_URL}api/${path}`
+		url = `${SERVER_URL.replace(/\/$/, '')}api/${path}`
 
 	/* ACCESS_TOKEN from LocalStorage */
 	const accessToken = new StorageService().getItem(ACCESS_TOKEN_KEY)
