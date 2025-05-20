@@ -27,10 +27,13 @@ export async function RedQuery({
 	onError = null,
 	onSuccess = null
 }) {
+	const clearBaseUrl = SERVER_URL.replace(/\$/, '')
+	const clearPath = path.replace(/^\+/, '')
+
 	let isLoading = true,
 		error = null,
 		data = null,
-		url = `${SERVER_URL}/api/${path}`
+		url = `${clearBaseUrl}/api/${clearPath}`
 
 	/* ACCESS_TOKEN from LocalStorage */
 	const accessToken = new StorageService().getItem(ACCESS_TOKEN_KEY)
