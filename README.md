@@ -73,20 +73,6 @@ JustBank is a modern banking interface that provides users with a clean, intuiti
 </tr>
 </table>
 
-### 🔧 Development Tools
-
-| Tool | Purpose | Description |
-|------|---------|-------------|
-| **JavaScript** | Core Language | Application logic and interactivity |
-| **SCSS** | Styling | Advanced styling and responsive design |
-| **HTML5** | Markup | Semantic structure and accessibility |
-| **Webpack** | Build Tool | Module bundling and optimization |
-| **Handlebars** | Templates | Dynamic content generation |
-| **ESLint** | Code Quality | Linting and code standards |
-| **Prettier** | Formatting | Consistent code formatting |
-| **Plop.js** | Code Generation | Automated component scaffolding |
-| **Vercel** | Deployment | Hosting and continuous deployment |
-
 ## 🏃‍♂️ Getting Started
 
 ### Prerequisites
