@@ -56,7 +56,6 @@ export class CardService {
 			method: 'PATCH',
 			body: {
 				amount: +amount,
-				formCardNumber: this.store.user.card.number,
 				toCardNumber
 			},
 			onSuccess: () => {
