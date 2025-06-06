@@ -20,8 +20,8 @@ export class TransactionItem extends ChildComponent {
 		const IsIncome = this.transaction.type === 'TOP_UP'
 		const name = IsIncome ? 'Income' : 'Expense'
 		const icon_src = IsIncome
-			? './icons/money-income.svg'
-			: './icons/money-expense.svg'
+			? '/icons/money-income.svg'
+			: '/icons/money-expense.svg'
 
 		$R(this.element).find('#transaction-icon').src(icon_src)
 		$R(this.element).find('#transaction-type').text(name)
