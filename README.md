@@ -34,78 +34,58 @@ JustBank is a modern banking interface that provides users with a clean, intuiti
 
 ## 🛠️ Tech Stack
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; padding: 30px; margin: 20px 0;">
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; color: white;">
-    
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" height="40" alt="JavaScript"/>
-      <div>
-        <h4 style="margin: 0; font-size: 18px;">JavaScript</h4>
-        <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Core application logic and interactivity</p>
-      </div>
-    </div>
+<table>
+<tr>
+<td align="center" width="100">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="48" height="48" alt="JavaScript" />
+<br><strong>JavaScript</strong>
+</td>
+<td align="center" width="100">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" width="48" height="48" alt="SCSS" />
+<br><strong>SCSS</strong>
+</td>
+<td align="center" width="100">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="48" height="48" alt="HTML5" />
+<br><strong>HTML5</strong>
+</td>
+<td align="center" width="100">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" width="48" height="48" alt="Webpack" />
+<br><strong>Webpack</strong>
+</td>
+</tr>
+<tr>
+<td align="center" width="100">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg" width="48" height="48" alt="Handlebars" />
+<br><strong>Handlebars</strong>
+</td>
+<td align="center" width="100">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" width="48" height="48" alt="ESLint" />
+<br><strong>ESLint</strong>
+</td>
+<td align="center" width="100">
+<img src="https://prettier.io/icon.png" width="48" height="48" alt="Prettier" />
+<br><strong>Prettier</strong>
+</td>
+<td align="center" width="100">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="48" height="48" alt="Vercel" />
+<br><strong>Vercel</strong>
+</td>
+</tr>
+</table>
 
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" width="40" height="40" alt="SCSS"/>
-      <div>
-        <h4 style="margin: 0; font-size: 18px;">SCSS</h4>
-        <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Advanced styling and responsive design</p>
-      </div>
-    </div>
+### 🔧 Development Tools
 
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" height="40" alt="HTML5"/>
-      <div>
-        <h4 style="margin: 0; font-size: 18px;">HTML5</h4>
-        <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Semantic markup and structure</p>
-      </div>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" width="40" height="40" alt="Webpack"/>
-      <div>
-        <h4 style="margin: 0; font-size: 18px;">Webpack</h4>
-        <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Module bundling and optimization</p>
-      </div>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg" width="40" height="40" alt="Handlebars"/>
-      <div>
-        <h4 style="margin: 0; font-size: 18px;">Handlebars</h4>
-        <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Template engine for dynamic content</p>
-      </div>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" width="40" height="40" alt="ESLint"/>
-      <div>
-        <h4 style="margin: 0; font-size: 18px;">ESLint & Prettier</h4>
-        <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Code quality and formatting</p>
-      </div>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
-        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
-        <path d="M12 6c-3.309 0-6 2.691-6 6s2.691 6 6 6 6-2.691 6-6-2.691-6-6-6zm0 10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z"/>
-      </svg>
-      <div>
-        <h4 style="margin: 0; font-size: 18px;">Plop.js</h4>
-        <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Automated component generation</p>
-      </div>
-    </div>
-
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="40" height="40" alt="Vercel" style="filter: invert(1);"/>
-      <div>
-        <h4 style="margin: 0; font-size: 18px;">Vercel</h4>
-        <p style="margin: 5px 0 0 0; opacity: 0.9; font-size: 14px;">Deployment and hosting platform</p>
-      </div>
-    </div>
-
-  </div>
-</div>
+| Tool | Purpose | Description |
+|------|---------|-------------|
+| **JavaScript** | Core Language | Application logic and interactivity |
+| **SCSS** | Styling | Advanced styling and responsive design |
+| **HTML5** | Markup | Semantic structure and accessibility |
+| **Webpack** | Build Tool | Module bundling and optimization |
+| **Handlebars** | Templates | Dynamic content generation |
+| **ESLint** | Code Quality | Linting and code standards |
+| **Prettier** | Formatting | Consistent code formatting |
+| **Plop.js** | Code Generation | Automated component scaffolding |
+| **Vercel** | Deployment | Hosting and continuous deployment |
 
 ## 🏃‍♂️ Getting Started
 
@@ -221,5 +201,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - ✅ Added app&render service integration
 - ✅ Configured API services
 - ✅ Set up automated folder and file generation with Plop
+---
 
 ⭐ If you found this project helpful, please consider giving it a star!
