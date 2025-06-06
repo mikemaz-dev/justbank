@@ -7,7 +7,6 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import webpack from 'webpack'
-import CopyPlugin from 'copy-webpack-plugin'
 
 dotenv.config()
 
@@ -33,14 +32,6 @@ const plugins = [
 		filename: isDev ? '[name].css' : '[name].[contenthash].css',
 		chunkFilename: isDev ? '[id].css' : '[id].[contenthash].css'
 	}),
-	new CopyPlugin({
-		patterns: [
-			{
-				from: path.resolve(__dirname, 'public'),
-				to: path.resolve(__dirname, 'dist/public')
-			}
-		]
-	})
 ]
 
 export default {
