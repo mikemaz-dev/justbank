@@ -55,10 +55,6 @@ JustBank is a modern banking interface that provides users with a clean, intuiti
 </tr>
 <tr>
 <td align="center" width="100">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original.svg" width="48" height="48" alt="Handlebars" />
-<br><strong>Handlebars</strong>
-</td>
-<td align="center" width="100">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" width="48" height="48" alt="ESLint" />
 <br><strong>ESLint</strong>
 </td>
